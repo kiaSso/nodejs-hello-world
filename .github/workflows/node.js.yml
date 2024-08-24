@@ -22,7 +22,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
-    - run: npm init
     - run: npm install
     - run: npm run build --if-present
     - run: npm test

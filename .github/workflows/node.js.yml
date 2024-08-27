@@ -11,9 +11,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ${{ matrix.os }}
-
     strategy:
       matrix:
         # os: [ubuntu-latest, windows-latest]
@@ -21,7 +19,6 @@ jobs:
         # node-version: [18.x, 20.x, 22.x]
         node-version: [22.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -36,8 +33,8 @@ jobs:
         name: webpack artifacts
         path: my-server.js
   test:
-    needs: build
-    runs-on: '${{ matrix.os }}'
+    # needs: build
+    runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/download-artifact@main
       with:

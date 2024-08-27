@@ -41,3 +41,4 @@ jobs:
         name: webpack artifacts
         path: ./
     - run: echo $(ls -la)
+    - run: cat my-server.js

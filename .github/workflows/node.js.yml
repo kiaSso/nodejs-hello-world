@@ -34,3 +34,11 @@ jobs:
       with:
         name: webpack artifacts
         path: my-server.js
+  test:
+    needs: build
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/download-artifact@main
+      with:
+        name: webpack artifacts
+        path: my-server.js

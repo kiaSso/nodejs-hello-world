@@ -31,7 +31,7 @@ jobs:
     - uses: actions/upload-artifact@main
       with:
         name: webpack artifacts
-        path: my-server.js
+        path: ./
   test:
     needs: [build]
     runs-on: ubuntu-latest
@@ -39,5 +39,5 @@ jobs:
     - uses: actions/download-artifact@main
       with:
         name: webpack artifacts
-        path: my-server.js
+        path: ./
     - run: echo $(ls -la)
